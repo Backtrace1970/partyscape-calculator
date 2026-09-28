@@ -1,16 +1,16 @@
 {
   {
  "Cooking": [
-    { "name": "Shrimp", "level": 1, "xp": 21, "time": 2.5, "inputs": { "Shrimp: 1 } },
-    { "name": "Anchovies", "level": 1, "xp": 25, "time": 3.0, "inputs": { "Anchovies: 1 } },
-    { "name": "Chicken", "level": 1, "xp": 21, "time": 2.5, "inputs": { "Chicken: 1 } },
-    { "name": "Trout", "level": 15, "xp": 36, "time": 3.5, "inputs": { "Trout: 1 } },
-    { "name": "Tuna", "level": 30, "xp": 50, "time": 4.0, "inputs": { "Tuna: 1 } },
-    { "name": "Lobster", "level": 40, "xp": 69, "time": 5.0, "inputs": { "Lobster: 1 } },
-    { "name": "Swordfish", "level": 45, "xp": 87, "time": 6.0, "inputs": { "Swordfish: 1 } },
-    { "name": "Shark", "level": 80, "xp": 136, "time": 7.0, "inputs": { "Shark: 1 } },
-    { "name": "Shark Platter", "level": 84, "xp": 100, "time": 5.0, "inputs": { "Shark Platter: 5 } },
-    { "name": "Seafood Feast", "level": 92, "xp": 126, "time": 6.0, "inputs": { "Seafood Feast: 5 } }
+    { "name": "Shrimp", "level": 1, "xp": 21, "time": 2.5, "inputs": { "Shrimp": 1 } },
+    { "name": "Anchovies", "level": 1, "xp": 25, "time": 3.0, "inputs": { "Anchovies": 1 } },
+    { "name": "Chicken", "level": 1, "xp": 21, "time": 2.5, "inputs": { "Chicken": 1 } },
+    { "name": "Trout", "level": 15, "xp": 36, "time": 3.5, "inputs": { "Trout": 1 } },
+    { "name": "Tuna", "level": 30, "xp": 50, "time": 4.0, "inputs": { "Tuna": 1 } },
+    { "name": "Lobster", "level": 40, "xp": 69, "time": 5.0, "inputs": { "Lobster": 1 } },
+    { "name": "Swordfish", "level": 45, "xp": 87, "time": 6.0, "inputs": { "Swordfish": 1 } },
+    { "name": "Shark", "level": 80, "xp": 136, "time": 7.0, "inputs": { "Shark": 1 } },
+    { "name": "Shark Platter", "level": 84, "xp": 100, "time": 5.0, "inputs": { "Shark Platter": 5 } },
+    { "name": "Seafood Feast", "level": 92, "xp": 126, "time": 6.0, "inputs": { "Seafood Feast": 5 } }
   ],
 
   "Tailoring": [
