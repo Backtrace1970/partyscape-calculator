@@ -1,27 +1,26 @@
 {
-  {
- "Cooking": [
-    { "name": "Cooked Shrimp", "level": 1, "xp": 21, "time": 2.5, "inputs": { "Shrimp": 1 } },
-    { "name": "Cooked Anchovies", "level": 1, "xp": 25, "time": 3.0, "inputs": { "Anchovies": 1 } },
-    { "name": "Cooked Chicken", "level": 1, "xp": 21, "time": 2.5, "inputs": { "Chicken": 1 } },
-    { "name": "Cooked Trout", "level": 15, "xp": 36, "time": 3.5, "inputs": { "Trout": 1 } },
-    { "name": "Cooked Tuna", "level": 30, "xp": 50, "time": 4.0, "inputs": { "Tuna": 1 } },
-    { "name": "Cooked Lobster", "level": 40, "xp": 69, "time": 5.0, "inputs": { "Lobster": 1 } },
-    { "name": "Cooked Swordfish", "level": 45, "xp": 87, "time": 6.0, "inputs": { "Swordfish": 1 } },
-    { "name": "Cooked Shark", "level": 80, "xp": 136, "time": 7.0, "inputs": { "Shark": 1 } },
-    { "name": "Cooked Shark Platter", "level": 84, "xp": 100, "time": 5.0, "inputs": { "Shark Platter": 5 } },
-    { "name": "Cooked Seafood Feast", "level": 92, "xp": 126, "time": 6.0, "inputs": { "Seafood Feast": 5 } }
+  "Cooking": [
+    { "name": "Cooked Shrimp", "level": 1, "xp": 21, "timeSec": 2.5, "inputs": { "Shrimp": 1 } },
+    { "name": "Cooked Anchovies", "level": 1, "xp": 25, "timeSec": 3.0, "inputs": { "Anchovies": 1 } },
+    { "name": "Cooked Chicken", "level": 1, "xp": 21, "timeSec": 2.5, "inputs": { "Chicken": 1 } },
+    { "name": "Cooked Trout", "level": 15, "xp": 36, "timeSec": 3.5, "inputs": { "Trout": 1 } },
+    { "name": "Cooked Tuna", "level": 30, "xp": 50, "timeSec": 4.0, "inputs": { "Tuna": 1 } },
+    { "name": "Cooked Lobster", "level": 40, "xp": 69, "timeSec": 5.0, "inputs": { "Lobster": 1 } },
+    { "name": "Cooked Swordfish", "level": 45, "xp": 87, "timeSec": 6.0, "inputs": { "Swordfish": 1 } },
+    { "name": "Cooked Shark", "level": 80, "xp": 136, "timeSec": 7.0, "inputs": { "Shark": 1 } },
+    { "name": "Cooked Shark Platter", "level": 84, "xp": 100, "timeSec": 5.0, "inputs": { "Shark Platter": 5 } },
+    { "name": "Cooked Seafood Feast", "level": 92, "xp": 126, "timeSec": 6.0, "inputs": { "Seafood Feast": 5 } }
   ],
   "Tailoring": [
-    { "name": "Novice Hat", "level": 1, "xp": 12, "time": 2.6, "inputs": { "Silk": 2 } },
-    { "name": "Mystic Robe Top", "level": 80, "xp": 62, "time": 3.2, "inputs": { "Astral Silk": 5, "Magic Logs": 3 } }
+    { "name": "Novice Hat", "level": 1, "xp": 12, "timeSec": 2.6, "inputs": { "Silk": 2 } },
+    { "name": "Mystic Robe Top", "level": 80, "xp": 62, "timeSec": 3.2, "inputs": { "Astral Silk": 5, "Magic Logs": 3 } }
   ],
   "Crafting": [
-    { "name": "Gold Ring", "level": 1, "xp": 15, "time": 2.0, "inputs": { "Gold Bar": 1 } },
-    { "name": "Ruby Amulet", "level": 50, "xp": 85, "time": 2.5, "inputs": { "Gold Bar": 1, "Ruby": 1 } }
+    { "name": "Gold Ring", "level": 1, "xp": 15, "timeSec": 2.0, "inputs": { "Gold Bar": 1 } },
+    { "name": "Ruby Amulet", "level": 50, "xp": 85, "timeSec": 2.5, "inputs": { "Gold Bar": 1, "Ruby": 1 } }
   ],
   "Woodcutting": [
-    { "name": "Normal Log", "level": 1, "xp": 25, "time": 3.0, "inputs": {} },
-    { "name": "Magic Log", "level": 75, "xp": 250, "time": 6.0, "inputs": {} }
+    { "name": "Normal Log", "level": 1, "xp": 25, "timeSec": 3.0, "inputs": {} },
+    { "name": "Magic Log", "level": 75, "xp": 250, "timeSec": 6.0, "inputs": {} }
   ]
 }
