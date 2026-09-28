@@ -216,21 +216,78 @@
     }
 
     // Populates the target recipes when a skill category is selected
-    function populateRecipes() {
-      const skill = document.getElementById("skillSelect").value;
-      const recipeSelect = document.getElementById("recipeSelect");
-      recipeSelect.innerHTML = "";
+function populateRecipes() {
+  const skill = document.getElementById("skillSelect").value;
+  const recipeSelect = document.getElementById("recipeSelect");
+  recipeSelect.innerHTML = "";
 
-      if (recipesData[skill]) {
-        recipesData[skill].forEach(item => {
-          const opt = document.createElement("option");
-          opt.value = item.xp;
-          opt.dataset.timeSec = item.timeSec || 2.5; // Default to 2.5s if omitted
-          opt.textContent = `${item.name} (${item.xp} XP / ${item.timeSec || 2.5}s)`;
-          recipeSelect.appendChild(opt);
-        });
-      }
+  if (recipesData[skill]) {
+    recipesData[skill].forEach((item, index) => {
+      const opt = document.createElement("option");
+      // Store the index so we can retrieve full recipe details easily
+      opt.value = index;
+      opt.textContent = `${item.name} (${item.xp} XP / ${item.timeSec || item.time || 2.5}s)`;
+      recipeSelect.appendChild(opt);
+    });
+  }
+}
+
+function calculateCrafts() {
+  const currentXp = parseInt(document.getElementById("currentXp").value) || 0;
+  const targetLvl = parseInt(document.getElementById("targetLevel").value) || 99;
+  
+  const skill = document.getElementById("skillSelect").value;
+  const recipeSelect = document.getElementById("recipeSelect");
+  
+  if (recipeSelect.value === "") return;
+
+  const selectedIndex = parseInt(recipeSelect.value);
+  const selectedRecipe = recipesData[skill][selectedIndex];
+
+  if (!selectedRecipe) return;
+
+  const recipeXp = selectedRecipe.xp || 1;
+  const actionTime = selectedRecipe.timeSec || selectedRecipe.time || 2.5;
+
+  const targetXp = getXpForLevel(targetLvl);
+  const xpNeeded = targetXp - currentXp;
+
+  if (xpNeeded <= 0) {
+    document.getElementById("calcResults").innerHTML = "<p style='color: #4caf50;'>You have already reached this target!</p>";
+    return;
+  }
+
+  const actionsNeeded = Math.ceil(xpNeeded / recipeXp);
+  const totalSeconds = actionsNeeded * actionTime;
+  const formattedTime = formatTime(totalSeconds);
+
+  // Build the Required Inputs HTML list
+  let inputsHtml = "";
+  if (selectedRecipe.inputs && Object.keys(selectedRecipe.inputs).length > 0) {
+    inputsHtml += "<p style='margin: 10px 0 5px 0;'><strong>Raw Materials / Inputs Required:</strong></p><ul style='margin: 0; padding-left: 20px;'>";
+    
+    for (const [material, amountPerCraft] of Object.entries(selectedRecipe.inputs)) {
+      const totalRequired = amountPerCraft * actionsNeeded;
+      inputsHtml += `<li><strong>${material}:</strong> ${totalRequired.toLocaleString()} (${amountPerCraft} per craft)</li>`;
     }
+    
+    inputsHtml += "</ul>";
+  } else {
+    inputsHtml = "<p style='margin: 10px 0 5px 0;'><strong>Raw Materials / Inputs Required:</strong> None</p>";
+  }
+
+  // Render complete results
+  document.getElementById("calcResults").innerHTML = `
+    <div style="background: #252530; padding: 15px; border-radius: 5px;">
+      <p style="margin: 5px 0;"><strong>Target Level ${targetLvl} Total XP:</strong> ${targetXp.toLocaleString()} XP</p>
+      <p style="margin: 5px 0;"><strong>Remaining XP Needed:</strong> ${xpNeeded.toLocaleString()} XP</p>
+      <p style="margin: 5px 0; color: #f5a623;"><strong>Actions / Items Required:</strong> ${actionsNeeded.toLocaleString()} crafts</p>
+      <p style="margin: 5px 0; color: #4caf50;"><strong>Estimated Time:</strong> ${formattedTime} (${totalSeconds.toLocaleString()} seconds)</p>
+      <hr style="border: 0; border-top: 1px solid #383845; margin: 10px 0;">
+      ${inputsHtml}
+    </div>
+  `;
+}
 
     // Formats total seconds into human-readable duration
     function formatTime(totalSeconds) {
