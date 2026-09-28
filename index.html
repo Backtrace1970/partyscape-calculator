@@ -84,9 +84,27 @@
       <div class="col">
         <label>Skill Category:</label><br>
         <select id="skillSelect" style="width: 100%;" onchange="populateRecipes()">
-          <option value="Tailoring">Tailoring</option>
+          <option value="Cooking">Cooking</option>
           <option value="Crafting">Crafting</option>
-          <option value="Woodcutting">Woodcutting</option>
+          <option value="Defense">Defense</option>
+          <option value="Enchanting">Enchanting</option>
+          <option value="Farming">Farming</option>
+          <option value="Fishing">Fishing</option>
+          <option value="Fletching">Fletching</option>
+         <option value="Herblore">Herblore</option>
+         <option value="Hitpoints">Hitpoints</option>
+         <option value="Magic">Magic</option>
+         <option value="Melee">Melee</option>
+        <option value="Mining">Mining</option>
+        <option value="Monster Hunting">Monster Hunting</option>
+        <option value="Prayer">Prayer</option>
+        <option value="Ranged">Ranged</option>
+        <option value="Runecrafting">Runecrafting</option>
+        <option value="Smithing">Smithing</option>
+        <option value="Tailoring">Tailoring</option>
+       <option value="Thieving">Thieving</option>
+      <option value="Woodcutting">Woodcutting</option>
+
         </select>
       </div>
       <div class="col">
@@ -112,8 +130,7 @@
   </div>
 
   <script>
-    let gameRequirements = {}; // Holds static game requirements data
-    let recipesData = {};        // Holds your recipe data
+    let recipesData = {};
 
     function getXpForLevel(level) {
       let total = 0;
@@ -124,18 +141,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
-      // 1. Fetch static game requirements directly from PartyScape's Public API
-      try {
-        const apiRes = await fetch("https://partyscape.club/api/v1/public/game/requirements");
-        if (apiRes.ok) {
-          gameRequirements = await apiRes.json();
-          console.log("PartyScape Static Requirements Loaded:", gameRequirements);
-        }
-      } catch (err) {
-        console.error("Could not load static game requirements from API:", err);
-      }
-
-      // 2. Load local recipes.json
+      // Load Recipe JSON
       try {
         const res = await fetch("recipes.json");
         recipesData = await res.json();
@@ -144,7 +150,7 @@
         console.error("Could not load recipes.json", e);
       }
 
-      // 3. Auto-load saved user API Token if present
+      // Load Token
       const savedToken = localStorage.getItem("partyscape_token");
       if (savedToken) {
         document.getElementById("tokenInput").value = savedToken;
@@ -225,6 +231,11 @@
           <p style="margin: 5px 0; color: #f5a623;"><strong>Actions / Items Required:</strong> ${actionsNeeded.toLocaleString()} crafts</p>
         </div>
       `;
+    }
+  </script>
+</body>
+</html>
+
     }
   </script>
 </body>
