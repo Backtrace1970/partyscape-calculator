@@ -114,7 +114,6 @@
   <script>
     let gameRequirements = {}; // Holds static game requirements data
     let recipesData = {};        // Holds your recipe data
-    
 
     function getXpForLevel(level) {
       let total = 0;
@@ -125,35 +124,27 @@
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Fetch static game requirements directly from PartyScape's Public API
-  try {
-    const apiRes = await fetch("https://partyscape.club/api/v1/public/game/requirements");
-    if (apiRes.ok) {
-      gameRequirements = await apiRes.json();
-      console.log("PartyScape Static Requirements Loaded:", gameRequirements);
-    }
-  } catch (err) {
-    console.error("Could not load static game requirements from API:", err);
-  }
+      // 1. Fetch static game requirements directly from PartyScape's Public API
+      try {
+        const apiRes = await fetch("https://partyscape.club/api/v1/public/game/requirements");
+        if (apiRes.ok) {
+          gameRequirements = await apiRes.json();
+          console.log("PartyScape Static Requirements Loaded:", gameRequirements);
+        }
+      } catch (err) {
+        console.error("Could not load static game requirements from API:", err);
+      }
 
-  // 2. Load local recipes.json
-  try {
-    const res = await fetch("recipes.json");
-    recipesData = await res.json();
-    populateRecipes();
-  } catch (e) {
-    console.error("Could not load recipes.json", e);
-  }
+      // 2. Load local recipes.json
+      try {
+        const res = await fetch("recipes.json");
+        recipesData = await res.json();
+        populateRecipes();
+      } catch (e) {
+        console.error("Could not load recipes.json", e);
+      }
 
-  // 3. Auto-load saved user API Token if present
-  const savedToken = localStorage.getItem("partyscape_token");
-  if (savedToken) {
-    document.getElementById("tokenInput").value = savedToken;
-    fetchPlayerData(savedToken);
-  }
-});
-
-      // Load Token
+      // 3. Auto-load saved user API Token if present
       const savedToken = localStorage.getItem("partyscape_token");
       if (savedToken) {
         document.getElementById("tokenInput").value = savedToken;
