@@ -1,0 +1,14 @@
+{
+  "Tailoring": [
+    { "name": "Novice Hat", "level": 1, "xp": 12, "time": 2.6, "inputs": { "Silk": 2 } },
+    { "name": "Mystic Robe Top", "level": 80, "xp": 62, "time": 3.2, "inputs": { "Astral Silk": 5, "Magic Logs": 3 } }
+  ],
+  "Crafting": [
+    { "name": "Gold Ring", "level": 1, "xp": 15, "time": 2.0, "inputs": { "Gold Bar": 1 } },
+    { "name": "Ruby Amulet", "level": 50, "xp": 85, "time": 2.5, "inputs": { "Gold Bar": 1, "Ruby": 1 } }
+  ],
+  "Woodcutting": [
+    { "name": "Normal Log", "level": 1, "xp": 25, "time": 3.0, "inputs": {} },
+    { "name": "Magic Log", "level": 75, "xp": 250, "time": 6.0, "inputs": {} }
+  ]
+}
